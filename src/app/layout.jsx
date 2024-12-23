@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative flex `}
       >
-        <div className="bg-gray-100 w-48 border-r-2 border-r-gray-200">
+        <div className="bg-gray-100 border-r-2 border-r-gray-200">
           <Navbar />
         </div>
         <Modal />

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function IconCards({
   title = "",
-  address = "./",
+  address = "/sales/leads",
   Icon,
   border,
 }) {
@@ -14,7 +14,7 @@ export default function IconCards({
         className=" flex items-center gap-1 px-1 py-[1px]"
       >
         <Icon className="text-lg" />
-        <p className="hidden sm:inline text-xs tracking-normal">{title}</p>
+        <p className="hidden md:inline text-xs tracking-normal">{title}</p>
       </Link>
     </div>
   );

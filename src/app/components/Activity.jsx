@@ -11,7 +11,7 @@ export default function Activity({
     <div className="px-2 border rounded-md py-1 w-full flex flex-col gap-1 shadow-sm">
       <div className="flex items-center">
         <div className="rounded-full w-7  aspect-square  mr-1.5 overflow-hidden">
-          <Image src="/images/dam.jpg" alt="activity" width={28} height={28} />
+          <Image src="/images/rica.jpg" alt="activity" width={28} height={28} />
         </div>
         <div className="">
           <p className="font-bold">{activity}</p>

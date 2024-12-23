@@ -8,14 +8,14 @@ export default function ClientComponent() {
   const numClients = ClientDatas.length;
   const [currentPage, setCurrentPage] = useState(1);
   return (
-    <div className="relative flex flex-col items-center">
+    <div className="relative flex gap-5 flex-col items-center">
       <p className="text-[0.82rem] text-gray-500 tracking-tight font-semibold self-start">
         Copilot has pinpointed 20 key leads that show strong purchase intent and
         are actively engaging. This leads need your focus.
       </p>
-      <div className="relative mt-2 flex gap-4 items-center">
+      <div className="relative mt-2 flex flex-col lg:flex-row gap-4 items-center">
         <div
-          className={`rounded-full absolute top-1/2 -translate-y-1/2 p-0.5 -translate-x-1/2 border-2 cursor-pointer bg-white ${
+          className={`rounded-full absolute top-1/2 left-0 -translate-y-1/2  p-0.5 -translate-x-1/2 border-2 cursor-pointer bg-white ${
             currentPage === 1 ? "hidden" : ""
           }`}
           onClick={() => {
@@ -42,7 +42,7 @@ export default function ClientComponent() {
           <ClientCard key={client.id} client={client} />
         ))}
       </div>
-      <div className="mt-5 gap-2 flex items-center">
+      <div className=" gap-2 flex items-center">
         {ClientDatas.filter((client) => client.id != numClients).map(
           (client) => (
             <div

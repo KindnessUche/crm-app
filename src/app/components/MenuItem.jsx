@@ -1,9 +1,15 @@
 import Link from "next/link";
 
-export default function MenuItem({ title = "", address = "./", Icon, path }) {
+export default function MenuItem({
+  title = "",
+  address = "./",
+  Icon,
+  path,
+  open,
+}) {
   return (
     <div
-      className={`p-2 px-1.5 text-slate-600 hover:bg-white ${
+      className={`p-2 px-1.5 h-10 text-slate-600 hover:bg-white ${
         path === address ? "bg-white" : ""
       }`}
     >
@@ -14,7 +20,13 @@ export default function MenuItem({ title = "", address = "./", Icon, path }) {
       ></div>
       <Link href={address} className="flex items-center gap-2.5 pl-1">
         <Icon className="text-md" />
-        <p className="hidden sm:inline text-sm tracking-normal">{title}</p>
+        <p
+          className={`hidden md:inline text-sm tracking-normal md:${
+            open ? "mr-8" : ""
+          }`}
+        >
+          {title}
+        </p>
       </Link>
     </div>
   );

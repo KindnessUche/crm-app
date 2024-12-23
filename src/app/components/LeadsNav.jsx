@@ -1,5 +1,6 @@
+"use client";
+import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
-import { FaChevronUP } from "react-icons/fa6";
 import IconCards from "./IconCards";
 import { RiLineChartFill } from "react-icons/ri";
 import { CiCircleList } from "react-icons/ci";
@@ -14,6 +15,7 @@ import { LuColumns3 } from "react-icons/lu";
 import { VscFileSymlinkDirectory } from "react-icons/vsc";
 
 export default function LeadsNav({ onClick, openActive }) {
+  const [openShow, setOpenShow] = useState(true);
   return (
     <div className="px-2 py-1 w-screen flex max-w-7xl shadow-md rounded-md border-2">
       <div className="flex gap-2 items-center text-sm mr-auto">
@@ -29,7 +31,7 @@ export default function LeadsNav({ onClick, openActive }) {
       </div>
       <div className="flex gap-1 items-center">
         <div className="flex items-center ">
-          <div className="flex">
+          <div className={`${openShow ? "flex" : "hidden"}`}>
             <IconCards title="Show chart" Icon={RiLineChartFill} />
             <IconCards title="Focused view" Icon={CiCircleList} />
             <IconCards title="New" Icon={LuPlus} />
@@ -38,7 +40,18 @@ export default function LeadsNav({ onClick, openActive }) {
             <IconCards title="Delete" Icon={RiDeleteBin6Line} />
           </div>
           <p className="opacity-40 text-slate-500">|</p>
-          <FaChevronDown className="text-slate-500 text-sm" />
+          <FaChevronDown
+            className={`text-slate-500 text-sm ${openShow ? "" : "hidden"}`}
+            onClick={() => {
+              setOpenShow(false);
+            }}
+          />
+          <FaChevronUp
+            className={`text-slate-500 text-sm ${openShow ? "hidden" : ""}`}
+            onClick={() => {
+              setOpenShow(true);
+            }}
+          />
         </div>
         <div className="mx-2">
           <HiOutlineDotsVertical />
